@@ -15,7 +15,11 @@ let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogeli
 */
 
 // CREA TU FUNCION mayusculas aqui:
-
+function mayusculas(nombres) {
+	for (const nombre of nombres) {
+		console.log(nombre.toUpperCase());
+	}
+}
 
 
 /*
@@ -23,14 +27,30 @@ let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogeli
 */
 
 // CREA TU FUNCION numVocales aqui:
+function numVocales(vocal) {
+	var count = 0;
+	for (const v of vocal) {
+		if (esVocal(v.toLowerCase())) {
+			count++;
+		}
+	}
+	console.log(vocal + " tiene: " + count + " vocales");
+}
 
+function esVocal(letra) {
+	return letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u';
+}
 
 /*
 ### F3 Crea una funcion llamada numVocalesArr que reciba un arreglo y mande llamar a la funcion numVocales para que escriba la longitud de cada elemento del arreglo." 
 */
 
 // CREA TU FUNCION numVocalesArr aqui:
-
+function numVocalesArr(vocales) {
+	for (const vocal of vocales) {
+		numVocales(vocal);
+	}
+}
 
 
 
@@ -65,6 +85,21 @@ Deberia escribir en consola
 
 */
 
+class Perro {
+	constructor(nombre, color, raza) {
+		this.nombre = nombre;
+		this.color = color;
+		this.raza = raza;
+	} 
+
+	printInfo() {
+		console.log("Nombre: " + this.nombre + ", De Color: " + this.color + ", Raza: " + this.raza);
+	}
+}
+
+var kiara = new Perro("kiara", "blanca", "jack russel terrier");
+var guchi = new Perro("Guchi", "cafe", "labrador");
+var baloo = new Perro("Baloo", "gris", "Husky");
 
 
 /***
@@ -74,12 +109,14 @@ Deberia escribir en consola
  ***/
 
 // F1
-
+mayusculas(nombres);
 
 // F2
+numVocales(nombres[0]);
 
 
 // F3
+numVocalesArr(nombres);
 
 
 
@@ -90,6 +127,11 @@ Deberia escribir en consola
  * 
  ***/
 
+console.log(kiara.nombre);
+console.log(guchi.color);
+console.log(baloo.raza);
+
+kiara.printInfo();
 
 </script>
 
